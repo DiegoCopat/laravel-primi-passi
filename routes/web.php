@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data =[
+        "menu" => [
+            "piante",
+            "fiori",
+            "pietre",
+            "animali",
+            "insetti"
+        ]
+    ];
+    return view('home', $data);
 });
