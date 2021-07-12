@@ -19,7 +19,7 @@
             main {
                 display: flex;
                 width: 100%; 
-                height: 100vh; 
+                height: calc(100vh - 51px); 
                 background-color: #636B6F;
             }
             div {
@@ -36,6 +36,7 @@
                 transition: all linear 0.5s;
                 border: 1px solid white;
                 background-color: opacity(100);
+                cursor: pointer;
             }
             div:hover h1 {
                 color: white;
@@ -48,10 +49,55 @@
                 font-size: 30px;
                 transition: all linear 0.5s;
             }
+            header {
+                display: flex;
+                background-color: gray;
+                color: white;
+                /* border-bottom: 1px solid white; */
+            }
+            ol{
+                display: flex;
+                width: 80%;
+                height: 50px;
+                margin: auto;
+            }
+            li {
+                display: flex;
+                margin: auto;
+                width: 100px;
+                height: 100%;
+                list-style: none;
+                text-transform: uppercase;
+                transition: all linear 0.4s;
+            }
+            li:hover {
+                border-bottom: 1px solid white;
+                cursor: pointer;
+            }
+            a {
+                margin: auto;
+                text-decoration: none;
+                color: white;
+            }
+            li:hover a {
+                transform: scale(1.1, 1.1);
+                transition: all linear 0.5s;
+            }
         </style>
     </head>
     <body>
         <header>
+
+            <ol>
+                @foreach ($menu as $item)
+                    <li>
+                            
+                        <a href="">{{ $item }}</a>
+                        
+                    </li>
+                @endforeach 
+            </ol>
+            
         </header>
         <main>
             <div>
